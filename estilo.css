@@ -1,0 +1,66 @@
+body{
+font-family: Arial, sans-serif;
+
+}
+.painel {
+    width: 600px;
+    margin: auto;
+    box-shadow: 2px 2px 16px black;
+    border-radius: 15px;
+    padding: 15px;
+    background: linear-gradient(to bottom, #3498db, #57b929);
+    text-align: center;
+}
+h1{
+    margin: 0;
+    color: #173548;
+    overflow: hidden;
+}
+textarea{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+
+}
+.enviar{
+    background-color: #1623dd30;
+    padding: 10px;
+    color: antiquewhite;
+    border: none;
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+}
+.enviar:hover{
+    background-color: #0f2206;
+    transition: 1s;
+
+}
+.botao{
+    background-color: rgba(200, 189, 173, 0.187);
+    border-radius : 5px ;
+}
+.botao:hover{
+background-color: #216e9e;
+transition: 1s;
+}
+a{
+    display: block;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #173548;
+}
+.card{
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 2px 2px 2px black;
+}
+.card:hover{
+    width: 95%;
+    height: 105%;
+}

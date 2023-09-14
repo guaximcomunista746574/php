@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=512&id=60956&format=png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        function buscar() {
+            var valor = $("#valor").val();
+            $.ajax({
+                url: "fazerbusca.php",
+                method: "GET", // Adicione a vírgula aqui
+                data: { busca: valor },
+                success: function (data) {
+                    $("#resultado").html(data);
+                }
+            });
+        }
+        $(document).ready(function () {
+            buscar();
+
+        });
+    </script>
+
+    </script>
+    <title>postagens</title>
+</head>
+
+<body>
+    <div class="painel">
+        <div class="cabecalho">
+            <h1>lista de discordia</h1>
+            <a href="index.html" class="botao">voltar</a>
+        </div>
+        <div class="conteudo">
+            <input type="text" id="valor" placeholder="digite a buscar">
+            <button onclick="buscar()">buscar</button>
+            <div id="resultado">
+
+            </div>
+        </div>
+        <div class="rodape"> <a href="cokie.html" class="botao">Cadastrar Usuario</a>
+            <a href="busca.html" class="botao">buscar</a>
+            <a href="lista.php" class="botao">lista de discordia </a>
+            <footer>
+                <p>&copy; 2023 rede social</p>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
