@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rede social</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=512&id=60956&format=png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="painel">
+        <form action="salvar.php" method="POST">
+        <div class="cabecalho"> </div>
+
+        <img width="200px" src="data:image/png;base64,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" alt="">
+
+        <h2>HeartfeltHub</h2>
+        <h4>fazer postagem</h4>
+        <div class="conteudo">
+            <form>
+                <textarea name="postagem" id="postagem" cols="25" rows="7" placeholder="oque vai ser hoje?"></textarea>
+                <br>
+                <br>
+                <input type="submit" value="postar" class="enviar">
+            </form>
+        </div>
+        <div class="rodape">
+            <a href="cokie.html" class="botao">Cadastrar Usuario</a>
+            <a href="busca.html" class="botao">buscar</a>
+            <a href="lista.php" class="botao">lista de discordia </a>
+            <footer>
+                <p>&copy; 2023 rede social</p>
+            </footer>
+        </div>
+
+    </div>
+</body>
+
+</html>
