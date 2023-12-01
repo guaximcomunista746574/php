@@ -1,13 +1,13 @@
 <?php
 include 'conexao.php';
 include 'valida.php';
-$destino = "./usuario/inserir.php";
+$destino = "./funcao/inserir.php";
 if (!empty($_GET['alteracao'])) {
     $id = $_GET['alteracao'];
-    $sql = "SELECT * FROM  usuario WHERE  id='$id' ";
+    $sql = "SELECT * FROM  funcao WHERE  id='$id' ";
     $dados = mysqli_query($conexao, $sql);
-    $usuarios = mysqli_fetch_assoc($dados);
-    $destino = "./usuario/alterar.php";
+    $funcaos = mysqli_fetch_assoc($dados);
+    $destino = "./funcao/alterar.php";
 }
 ?>
 
@@ -46,46 +46,31 @@ if (!empty($_GET['alteracao'])) {
                 <div class="row">
                     <div class="col-md cartao">
 
-                        <?php echo $_SESSION['usuario'] ?>
+                       
 
-                        <h3>bem vindo ao inferno lord 😈</h3>
+                        
 
 
                         <h1> Cadastro </h1>
                         <form action="<?= $destino; ?>">
                             <div class="form-group">
-                                <label> id do </label>
-                                <input name="id" type="text" value="<?php echo isset($usuarios) ? $usuarios['id'] : '' ?>"
+                                <label> id do usuario</label>
+                                <input name="id" type="text" value="<?php echo isset($funcaos) ? $funcaos['id'] : '' ?>"
                                     class="form-control" placeholder="Seu id">
                             </div>
 
                             <div class="form-group">
-                                <label> Código do Usuário</label>
-                                <input name="codigo" type="text"
-                                    value="<?php echo isset($usuarios) ? $usuarios['codigo'] : '' ?>" class="form-control"
-                                    placeholder="Seu codigo">
-                            </div>
-
-                            <div class="form-group">
-                                <label> Nome do Usuário</label>
-                                <input name="nome" type="text"
-                                    value="<?php echo isset($usuarios) ? $usuarios['nome'] : '' ?>" class="form-control"
-                                    placeholder="Seu nome">
+                                <label> descrição</label>
+                                <input name="descricao" type="text"
+                                    value="<?php echo isset($funcaos) ? $funcaos['descricao'] : '' ?>" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label> CPF </label>
-                                <input name="cpf" type="text"
-                                    value="<?php echo isset($usuarios) ? $usuarios['cpf'] : '' ?>" class="form-control"
-                                    placeholder="Seu CPF">
-                            </div>
-                            <div class="form-group">
-
-                                <label>Senha</label>
-
-                                <input name="senha" type="text"
-                                    value="<?php echo isset($usuarios) ? $usuarios['senha'] : '' ?>" class="form-control"
-                                    class="form-control" placeholder="Senha">
-                            </div>
+                                <label> observação </label>
+                                <input name="obs" type="text"
+                                    value="<?php echo isset($funcaos) ? $funcao['obs'] : '' ?>" class="form-control">
+                                    
+                           </div>
+                            
                             <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i>enviar</button>
                         </form>
 
@@ -96,8 +81,8 @@ if (!empty($_GET['alteracao'])) {
                             <thead>
                                 <tr>
                                     <th scope="col">id</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Alterar</th>
+                                    <th scope="col">descriçaõ</th>
+                                    <th scope="col">observação</th>
                                     <th scope="col">Excluir</th>
                                     <th scope="col">Editar</th>
                                 </tr>
@@ -105,7 +90,7 @@ if (!empty($_GET['alteracao'])) {
                             <tbody>
 
                                 <?php
-                                $sql = "SELECT * FROM usuario";
+                                $sql = "SELECT * FROM funcao";
                                 $resultado = mysqli_query($conexao, $sql);
                                 while ($coluna = mysqli_fetch_assoc($resultado)) {
 
@@ -115,13 +100,13 @@ if (!empty($_GET['alteracao'])) {
                                             <?php echo $coluna['id']; ?>
                                         </th>
                                         <td>
-                                            <?php echo $coluna['nome']; ?>
+                                            <?php echo $coluna['descricao']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $coluna['cpf']; ?>
+                                            <?php echo $coluna['obs']; ?>
                                         </td>
                                         <td>
-                                            <a href="<?php echo "./usuario/excluir.php?id=" . $coluna['id']; ?>"><i class="fa-solid fa-trash"></i></a>
+                                            <a href="<?php echo "./funcao/excluir.php?id=" . $coluna['id']; ?>"><i class="fa-solid fa-trash"></i></a>
                                         </td>
                                         <td><a href="principal.php?alteracao=<?= $coluna['id'];?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
 
